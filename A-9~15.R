@@ -41,7 +41,7 @@ A9_data1 %>% # 성별 5점평균
   summarise(mean5_A9 = mean(A9)) %>% as.data.frame()
 A9_data1 %>% # 성별 100점평균
   group_by(SQ1) %>%
-  summarise(mean5_A9 = 25*(mean(A9)-1)) %>% as.data.frame()
+  summarise(mean100_A9 = 25*(mean(A9)-1)) %>% as.data.frame()
 
 
 A9_data2 <- raw_citizen %>% # A9. 연령대 구분
@@ -58,7 +58,7 @@ A9_data2 %>% # 연령별 5점평균
   summarise(mean5_A9 = mean(A9)) %>% as.data.frame()
 A9_data2 %>% # 연령별 100점평균
   group_by(SQ2_2) %>%
-  summarise(mean5_A9 = 25*(mean(A9)-1)) %>% as.data.frame()
+  summarise(mean100_A9 = 25*(mean(A9)-1)) %>% as.data.frame()
 
 
 A9_data3 <- raw_citizen %>% # A9. 소득 구분
@@ -75,7 +75,7 @@ A9_data3 %>% # 소득별 5점평균
   summarise(mean5_A9 = mean(A9)) %>% as.data.frame()
 A9_data3 %>% # 소득별 100점평균
   group_by(DQ8_1) %>%
-  summarise(mean5_A9 = 25*(mean(A9)-1)) %>% as.data.frame()
+  summarise(mean100_A9 = 25*(mean(A9)-1)) %>% as.data.frame()
 
 
 A9_1_data1 <- raw_citizen %>% # A9-1. 성별 구분
@@ -169,7 +169,7 @@ A12_data1 %>% # 성별 5점평균
   summarise(mean5_A12 = mean(A12)) %>% as.data.frame()
 A12_data1 %>% # 성별 100점평균
   group_by(SQ1) %>%
-  summarise(mean5_A12 = 25*(mean(A12)-1)) %>% as.data.frame()
+  summarise(mean100_A12 = 25*(mean(A12)-1)) %>% as.data.frame()
 
 
 A12_data2 <- raw_citizen %>% # A12. 연령대 구분
@@ -186,7 +186,7 @@ A12_data2 %>% # 연령별 5점평균
   summarise(mean5_A12 = mean(A12)) %>% as.data.frame()
 A12_data2 %>% # 연령별 100점평균
   group_by(SQ2_2) %>%
-  summarise(mean5_A12 = 25*(mean(A12)-1)) %>% as.data.frame()
+  summarise(mean100_A12 = 25*(mean(A12)-1)) %>% as.data.frame()
 
 
 A12_data3 <- raw_citizen %>% # A12. 소득 구분
@@ -203,7 +203,7 @@ A12_data3 %>% # 소득별 5점평균
   summarise(mean5_A12 = mean(A12)) %>% as.data.frame()
 A12_data3 %>% # 소득별 100점평균
   group_by(DQ8_1) %>%
-  summarise(mean5_A12 = 25*(mean(A12)-1)) %>% as.data.frame()
+  summarise(mean100_A12 = 25*(mean(A12)-1)) %>% as.data.frame()
 
 A13_data1 <- raw_citizen %>% # A13. 성별 구분
   group_by(A13) %>% 
@@ -257,4 +257,6 @@ A15_data3 <- raw_citizen %>% # A15. 소득별 구분
   group_by(A15) %>% 
   select(DQ8_1)
 t(table(A15_data3)) # 행렬변환
+
+
 
