@@ -122,3 +122,223 @@ A16_2_data3 %>% # 소득별 5점평균
 A16_2_data3 %>% # 소득별 100점평균
   group_by(DQ8_1) %>%
   summarise(mean100_A16_2 = 25*(mean(A16_2)-1)) %>% as.data.frame()
+
+
+sd(raw_citizen$A16_3) # A16-3. 전체 표준편차
+mean(raw_citizen$A16_3) # A16-3. 전체 5점 평균
+25*(mean(raw_citizen$A16_3-1)) # A16-3. 전체 100점 평균 환산
+
+
+A16_3_data1 <- raw_citizen %>% # A16-3. 성별 구분
+  group_by(A16_3) %>% 
+  select(SQ1)
+t(table(A16_3_data1)) # 행렬변환
+
+A16_3_data1 %>% # 성별 표준편차
+  group_by(SQ1) %>% 
+  summarise(sd_A16_3 = sd(A16_3)) %>% as.data.frame()
+A16_3_data1 %>% # 성별 5점평균
+  group_by(SQ1) %>% 
+  summarise(mean5_A16_3 = mean(A16_3)) %>% as.data.frame()
+A16_3_data1 %>% # 성별 100점평균
+  group_by(SQ1) %>%
+  summarise(mean100_A16_3 = 25*(mean(A16_3)-1)) %>% as.data.frame()
+
+
+A16_3_data2 <- raw_citizen %>% # A16-3. 연령대 구분
+  group_by(A16_3) %>% 
+  select(SQ2_2)
+t(table(A16_3_data2)) # 행렬변환
+
+
+A16_3_data2 %>% # 연령별 표준편차
+  group_by(SQ2_2) %>% 
+  summarise(sd_A16_3 = sd(A16_3)) %>% as.data.frame()
+A16_3_data2 %>% # 연령별 5점평균
+  group_by(SQ2_2) %>% 
+  summarise(mean5_A16_3 = mean(A16_3)) %>% as.data.frame()
+A16_3_data2 %>% # 연령별 100점평균
+  group_by(SQ2_2) %>%
+  summarise(mean100_A16_3 = 25*(mean(A16_3)-1)) %>% as.data.frame()
+
+
+A16_3_data3 <- raw_citizen %>% # A16-3. 소득 구분
+  group_by(A16_3) %>% 
+  select(DQ8_1)
+t(table(A16_3_data3)) # 행렬변환
+
+
+A16_3_data3 %>% # 소득별 표준편차
+  group_by(DQ8_1) %>% 
+  summarise(sd_A16_3 = sd(A16_3)) %>% as.data.frame()
+A16_3_data3 %>% # 소득별 5점평균
+  group_by(DQ8_1) %>% 
+  summarise(mean5_A16_3 = mean(A16_3)) %>% as.data.frame()
+A16_3_data3 %>% # 소득별 100점평균
+  group_by(DQ8_1) %>%
+  summarise(mean100_A16_3 = 25*(mean(A16_3)-1)) %>% as.data.frame()
+
+
+sd(raw_citizen$A16_4) # A16-4. 전체 표준편차
+mean(raw_citizen$A16_4) # A16-4. 전체 5점 평균
+25*(mean(raw_citizen$A16_4-1)) # A16-4. 전체 100점 평균 환산
+
+
+A16_4_data1 <- raw_citizen %>% # A16-4. 성별 구분
+  group_by(A16_4) %>% 
+  select(SQ1)
+t(table(A16_4_data1)) # 행렬변환
+
+A16_4_data1 %>% # 성별 표준편차
+  group_by(SQ1) %>% 
+  summarise(sd_A16_4 = sd(A16_4)) %>% as.data.frame()
+A16_4_data1 %>% # 성별 5점평균
+  group_by(SQ1) %>% 
+  summarise(mean5_A16_4 = mean(A16_4)) %>% as.data.frame()
+A16_4_data1 %>% # 성별 100점평균
+  group_by(SQ1) %>%
+  summarise(mean100_A16_4 = 25*(mean(A16_4)-1)) %>% as.data.frame()
+
+
+A16_4_data2 <- raw_citizen %>% # A16-4. 연령대 구분
+  group_by(A16_4) %>% 
+  select(SQ2_2)
+t(table(A16_4_data2)) # 행렬변환
+
+
+A16_4_data2 %>% # 연령별 표준편차
+  group_by(SQ2_2) %>% 
+  summarise(sd_A16_4 = sd(A16_4)) %>% as.data.frame()
+A16_4_data2 %>% # 연령별 5점평균
+  group_by(SQ2_2) %>% 
+  summarise(mean5_A16_4 = mean(A16_4)) %>% as.data.frame()
+A16_4_data2 %>% # 연령별 100점평균
+  group_by(SQ2_2) %>%
+  summarise(mean100_A16_4 = 25*(mean(A16_4)-1)) %>% as.data.frame()
+
+
+A16_4_data3 <- raw_citizen %>% # A16-4. 소득 구분
+  group_by(A16_4) %>% 
+  select(DQ8_1)
+t(table(A16_4_data3)) # 행렬변환
+
+
+A16_4_data3 %>% # 소득별 표준편차
+  group_by(DQ8_1) %>% 
+  summarise(sd_A16_4 = sd(A16_4)) %>% as.data.frame()
+A16_4_data3 %>% # 소득별 5점평균
+  group_by(DQ8_1) %>% 
+  summarise(mean5_A16_4 = mean(A16_4)) %>% as.data.frame()
+A16_4_data3 %>% # 소득별 100점평균
+  group_by(DQ8_1) %>%
+  summarise(mean100_A16_4 = 25*(mean(A16_4)-1)) %>% as.data.frame()
+
+
+sd(raw_citizen$A16_5) # A16-5. 전체 표준편차
+mean(raw_citizen$A16_5) # A16-5. 전체 5점 평균
+25*(mean(raw_citizen$A16_5-1)) # A16-5. 전체 100점 평균 환산
+
+
+A16_5_data1 <- raw_citizen %>% # A16-5. 성별 구분
+  group_by(A16_5) %>% 
+  select(SQ1)
+t(table(A16_5_data1)) # 행렬변환
+
+A16_5_data1 %>% # 성별 표준편차
+  group_by(SQ1) %>% 
+  summarise(sd_A16_5 = sd(A16_5)) %>% as.data.frame()
+A16_5_data1 %>% # 성별 5점평균
+  group_by(SQ1) %>% 
+  summarise(mean5_A16_5 = mean(A16_5)) %>% as.data.frame()
+A16_5_data1 %>% # 성별 100점평균
+  group_by(SQ1) %>%
+  summarise(mean100_A16_5 = 25*(mean(A16_5)-1)) %>% as.data.frame()
+
+
+A16_5_data2 <- raw_citizen %>% # A16-5. 연령대 구분
+  group_by(A16_5) %>% 
+  select(SQ2_2)
+t(table(A16_5_data2)) # 행렬변환
+
+
+A16_5_data2 %>% # 연령별 표준편차
+  group_by(SQ2_2) %>% 
+  summarise(sd_A16_5 = sd(A16_5)) %>% as.data.frame()
+A16_5_data2 %>% # 연령별 5점평균
+  group_by(SQ2_2) %>% 
+  summarise(mean5_A16_5 = mean(A16_5)) %>% as.data.frame()
+A16_5_data2 %>% # 연령별 100점평균
+  group_by(SQ2_2) %>%
+  summarise(mean100_A16_5 = 25*(mean(A16_5)-1)) %>% as.data.frame()
+
+
+A16_5_data3 <- raw_citizen %>% # A16-5. 소득 구분
+  group_by(A16_5) %>% 
+  select(DQ8_1)
+t(table(A16_5_data3)) # 행렬변환
+
+
+A16_5_data3 %>% # 소득별 표준편차
+  group_by(DQ8_1) %>% 
+  summarise(sd_A16_5 = sd(A16_5)) %>% as.data.frame()
+A16_5_data3 %>% # 소득별 5점평균
+  group_by(DQ8_1) %>% 
+  summarise(mean5_A16_5 = mean(A16_5)) %>% as.data.frame()
+A16_5_data3 %>% # 소득별 100점평균
+  group_by(DQ8_1) %>%
+  summarise(mean100_A16_5 = 25*(mean(A16_5)-1)) %>% as.data.frame()
+
+
+sd(raw_citizen$A16_6) # A16-6. 전체 표준편차
+mean(raw_citizen$A16_6) # A16-6. 전체 5점 평균
+25*(mean(raw_citizen$A16_6-1)) # A16-6. 전체 100점 평균 환산
+
+
+A16_6_data1 <- raw_citizen %>% # A16-6. 성별 구분
+  group_by(A16_6) %>% 
+  select(SQ1)
+t(table(A16_6_data1)) # 행렬변환
+
+A16_6_data1 %>% # 성별 표준편차
+  group_by(SQ1) %>% 
+  summarise(sd_A16_6 = sd(A16_6)) %>% as.data.frame()
+A16_6_data1 %>% # 성별 5점평균
+  group_by(SQ1) %>% 
+  summarise(mean5_A16_6 = mean(A16_6)) %>% as.data.frame()
+A16_6_data1 %>% # 성별 100점평균
+  group_by(SQ1) %>%
+  summarise(mean100_A16_6 = 25*(mean(A16_6)-1)) %>% as.data.frame()
+
+
+A16_6_data2 <- raw_citizen %>% # A16-6. 연령대 구분
+  group_by(A16_6) %>% 
+  select(SQ2_2)
+t(table(A16_6_data2)) # 행렬변환
+
+
+A16_6_data2 %>% # 연령별 표준편차
+  group_by(SQ2_2) %>% 
+  summarise(sd_A16_6 = sd(A16_6)) %>% as.data.frame()
+A16_6_data2 %>% # 연령별 5점평균
+  group_by(SQ2_2) %>% 
+  summarise(mean5_A16_6 = mean(A16_6)) %>% as.data.frame()
+A16_6_data2 %>% # 연령별 100점평균
+  group_by(SQ2_2) %>%
+  summarise(mean100_A16_6 = 25*(mean(A16_6)-1)) %>% as.data.frame()
+
+
+A16_6_data3 <- raw_citizen %>% # A16-6. 소득 구분
+  group_by(A16_6) %>% 
+  select(DQ8_1)
+t(table(A16_6_data3)) # 행렬변환
+
+
+A16_6_data3 %>% # 소득별 표준편차
+  group_by(DQ8_1) %>% 
+  summarise(sd_A16_6 = sd(A16_6)) %>% as.data.frame()
+A16_6_data3 %>% # 소득별 5점평균
+  group_by(DQ8_1) %>% 
+  summarise(mean5_A16_6 = mean(A16_6)) %>% as.data.frame()
+A16_6_data3 %>% # 소득별 100점평균
+  group_by(DQ8_1) %>%
+  summarise(mean100_A16_6 = 25*(mean(A16_6)-1)) %>% as.data.frame()
