@@ -9,7 +9,7 @@ raw_citizen <- rawdata %>%  # 시흥시민 364명 필터링
 
 
 table(raw_citizen$DQ8_1) # 가구소득 재그룹화
-raw_citizen$DQ8_1 <- ifelse(raw_citizen$DQ8_1 == 1, "100만원 이하",
+raw_citizen$DQ8_1 <- ifelse(raw_citizen$DQ8_1 == 1, "100 만원 이하",
                             ifelse(raw_citizen$DQ8_1 %in% c(2,3), "100~200만원",
                                    ifelse(raw_citizen$DQ8_1 %in% c(4,5), "200~300만원", 
                                           ifelse(raw_citizen$DQ8_1 %in% c(6), "300~400만원",
