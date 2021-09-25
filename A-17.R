@@ -69,6 +69,22 @@ A17_1_data3 %>% # 소득별 100점평균
   summarise(mean100_A17_1 = 25*(mean(A17_1)-1)) %>% as.data.frame()
 
 
+A17_1_data4 <- raw_citizen %>% # A17-1. 송전탑 가시거리 거주 구분
+  group_by(A17_1) %>% 
+  select(A1)
+t(table(A17_1_data4)) # 행렬변환
+
+A17_1_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_1 = sd(A17_1)) %>% as.data.frame()
+A17_1_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_1 = mean(A17_1)) %>% as.data.frame()
+A17_1_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
+  summarise(mean100_A17_1 = 25*(mean(A17_1)-1)) %>% as.data.frame()
+
+
 sd(raw_citizen$A17_2) # A17-2. 전체 표준편차
 mean(raw_citizen$A17_2) # A17-2. 전체 5점 평균
 25*(mean(raw_citizen$A17_2-1)) # A17-2. 전체 100점 평균 환산
@@ -119,6 +135,22 @@ A17_2_data3 %>% # 소득별 5점평균
   summarise(mean5_A17_2 = mean(A17_2)) %>% as.data.frame()
 A17_2_data3 %>% # 소득별 100점평균
   group_by(DQ8_1) %>%
+  summarise(mean100_A17_2 = 25*(mean(A17_2)-1)) %>% as.data.frame()
+
+
+A17_2_data4 <- raw_citizen %>% # A17-2. 송전탑 가시거리 거주 구분
+  group_by(A17_2) %>% 
+  select(A1)
+t(table(A17_2_data4)) # 행렬변환
+
+A17_2_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_2 = sd(A17_2)) %>% as.data.frame()
+A17_2_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_2 = mean(A17_2)) %>% as.data.frame()
+A17_2_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
   summarise(mean100_A17_2 = 25*(mean(A17_2)-1)) %>% as.data.frame()
 
 
@@ -175,6 +207,22 @@ A17_3_data3 %>% # 소득별 100점평균
   summarise(mean100_A17_3 = 25*(mean(A17_3)-1)) %>% as.data.frame()
 
 
+A17_3_data4 <- raw_citizen %>% # A17-3. 송전탑 가시거리 거주 구분
+  group_by(A17_3) %>% 
+  select(A1)
+t(table(A17_3_data4)) # 행렬변환
+
+A17_3_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_3 = sd(A17_3)) %>% as.data.frame()
+A17_3_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_3 = mean(A17_3)) %>% as.data.frame()
+A17_3_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
+  summarise(mean100_A17_3 = 25*(mean(A17_3)-1)) %>% as.data.frame()
+
+
 sd(raw_citizen$A17_4) # A17-4. 전체 표준편차
 mean(raw_citizen$A17_4) # A17-4. 전체 5점 평균
 25*(mean(raw_citizen$A17_4-1)) # A17-4. 전체 100점 평균 환산
@@ -228,6 +276,21 @@ A17_4_data3 %>% # 소득별 100점평균
   summarise(mean100_A17_4 = 25*(mean(A17_4)-1)) %>% as.data.frame()
 
 
+A17_4_data4 <- raw_citizen %>% # A17-4. 송전탑 가시거리 거주 구분
+  group_by(A17_4) %>% 
+  select(A1)
+t(table(A17_4_data4)) # 행렬변환
+
+A17_4_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_4 = sd(A17_4)) %>% as.data.frame()
+A17_4_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_4 = mean(A17_4)) %>% as.data.frame()
+A17_4_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
+  summarise(mean100_A17_4 = 25*(mean(A17_4)-1)) %>% as.data.frame()
+
 
 sd(raw_citizen$A17_5) # A17-5. 전체 표준편차
 mean(raw_citizen$A17_5) # A17-5. 전체 5점 평균
@@ -279,6 +342,22 @@ A17_5_data3 %>% # 소득별 5점평균
   summarise(mean5_A17_5 = mean(A17_5)) %>% as.data.frame()
 A17_5_data3 %>% # 소득별 100점평균
   group_by(DQ8_1) %>%
+  summarise(mean100_A17_5 = 25*(mean(A17_5)-1)) %>% as.data.frame()
+
+
+A17_5_data4 <- raw_citizen %>% # A17-5. 송전탑 가시거리 거주 구분
+  group_by(A17_5) %>% 
+  select(A1)
+t(table(A17_5_data4)) # 행렬변환
+
+A17_5_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_5 = sd(A17_5)) %>% as.data.frame()
+A17_5_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_5 = mean(A17_5)) %>% as.data.frame()
+A17_5_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
   summarise(mean100_A17_5 = 25*(mean(A17_5)-1)) %>% as.data.frame()
 
 
@@ -335,6 +414,22 @@ A17_6_data3 %>% # 소득별 100점평균
   summarise(mean100_A17_6 = 25*(mean(A17_6)-1)) %>% as.data.frame()
 
 
+A17_6_data4 <- raw_citizen %>% # A17-6. 송전탑 가시거리 거주 구분
+  group_by(A17_6) %>% 
+  select(A1)
+t(table(A17_6_data4)) # 행렬변환
+
+A17_6_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_6 = sd(A17_6)) %>% as.data.frame()
+A17_6_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_6 = mean(A17_6)) %>% as.data.frame()
+A17_6_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
+  summarise(mean100_A17_6 = 25*(mean(A17_6)-1)) %>% as.data.frame()
+
+
 sd(raw_citizen$A17_7) # A17-7. 전체 표준편차
 mean(raw_citizen$A17_7) # A17-7. 전체 5점 평균
 25*(mean(raw_citizen$A17_7-1)) # A17-7. 전체 100점 평균 환산
@@ -385,6 +480,22 @@ A17_7_data3 %>% # 소득별 5점평균
   summarise(mean5_A17_7 = mean(A17_7)) %>% as.data.frame()
 A17_7_data3 %>% # 소득별 100점평균
   group_by(DQ8_1) %>%
+  summarise(mean100_A17_7 = 25*(mean(A17_7)-1)) %>% as.data.frame()
+
+
+A17_7_data4 <- raw_citizen %>% # A17-7. 송전탑 가시거리 거주 구분
+  group_by(A17_7) %>% 
+  select(A1)
+t(table(A17_7_data4)) # 행렬변환
+
+A17_7_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_7 = sd(A17_7)) %>% as.data.frame()
+A17_7_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_7 = mean(A17_7)) %>% as.data.frame()
+A17_7_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
   summarise(mean100_A17_7 = 25*(mean(A17_7)-1)) %>% as.data.frame()
 
 
@@ -441,6 +552,22 @@ A17_8_data3 %>% # 소득별 100점평균
   summarise(mean100_A17_8 = 25*(mean(A17_8)-1)) %>% as.data.frame()
 
 
+A17_8_data4 <- raw_citizen %>% # A17-8. 송전탑 가시거리 거주 구분
+  group_by(A17_8) %>% 
+  select(A1)
+t(table(A17_8_data4)) # 행렬변환
+
+A17_8_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_8 = sd(A17_8)) %>% as.data.frame()
+A17_8_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_8 = mean(A17_8)) %>% as.data.frame()
+A17_8_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
+  summarise(mean100_A17_8 = 25*(mean(A17_8)-1)) %>% as.data.frame()
+
+
 sd(raw_citizen$A17_9) # A17-9. 전체 표준편차
 mean(raw_citizen$A17_9) # A17-9. 전체 5점 평균
 25*(mean(raw_citizen$A17_9-1)) # A17-9. 전체 100점 평균 환산
@@ -491,6 +618,22 @@ A17_9_data3 %>% # 소득별 5점평균
   summarise(mean5_A17_9 = mean(A17_9)) %>% as.data.frame()
 A17_9_data3 %>% # 소득별 100점평균
   group_by(DQ8_1) %>%
+  summarise(mean100_A17_9 = 25*(mean(A17_9)-1)) %>% as.data.frame()
+
+
+A17_9_data4 <- raw_citizen %>% # A17-9. 송전탑 가시거리 거주 구분
+  group_by(A17_9) %>% 
+  select(A1)
+t(table(A17_9_data4)) # 행렬변환
+
+A17_9_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_9 = sd(A17_9)) %>% as.data.frame()
+A17_9_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_9 = mean(A17_9)) %>% as.data.frame()
+A17_9_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
   summarise(mean100_A17_9 = 25*(mean(A17_9)-1)) %>% as.data.frame()
 
 
@@ -547,6 +690,22 @@ A17_10_data3 %>% # 소득별 100점평균
   summarise(mean100_A17_10 = 25*(mean(A17_10)-1)) %>% as.data.frame()
 
 
+A17_10_data4 <- raw_citizen %>% # A17-10. 송전탑 가시거리 거주 구분
+  group_by(A17_10) %>% 
+  select(A1)
+t(table(A17_10_data4)) # 행렬변환
+
+A17_10_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_10 = sd(A17_10)) %>% as.data.frame()
+A17_10_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_10 = mean(A17_10)) %>% as.data.frame()
+A17_10_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
+  summarise(mean100_A17_10 = 25*(mean(A17_10)-1)) %>% as.data.frame()
+
+
 sd(raw_citizen$A17_11) # A17-11. 전체 표준편차
 mean(raw_citizen$A17_11) # A17-11. 전체 5점 평균
 25*(mean(raw_citizen$A17_11-1)) # A17-11. 전체 100점 평균 환산
@@ -597,6 +756,22 @@ A17_11_data3 %>% # 소득별 5점평균
   summarise(mean5_A17_11 = mean(A17_11)) %>% as.data.frame()
 A17_11_data3 %>% # 소득별 100점평균
   group_by(DQ8_1) %>%
+  summarise(mean100_A17_11 = 25*(mean(A17_11)-1)) %>% as.data.frame()
+
+
+A17_11_data4 <- raw_citizen %>% # A17-11. 송전탑 가시거리 거주 구분
+  group_by(A17_11) %>% 
+  select(A1)
+t(table(A17_11_data4)) # 행렬변환
+
+A17_11_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_11 = sd(A17_11)) %>% as.data.frame()
+A17_11_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_11 = mean(A17_11)) %>% as.data.frame()
+A17_11_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
   summarise(mean100_A17_11 = 25*(mean(A17_11)-1)) %>% as.data.frame()
 
 
@@ -653,6 +828,22 @@ A17_12_data3 %>% # 소득별 100점평균
   summarise(mean100_A17_12 = 25*(mean(A17_12)-1)) %>% as.data.frame()
 
 
+A17_12_data4 <- raw_citizen %>% # A17-12. 송전탑 가시거리 거주 구분
+  group_by(A17_12) %>% 
+  select(A1)
+t(table(A17_12_data4)) # 행렬변환
+
+A17_12_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_12 = sd(A17_12)) %>% as.data.frame()
+A17_12_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_12 = mean(A17_12)) %>% as.data.frame()
+A17_12_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
+  summarise(mean100_A17_12 = 25*(mean(A17_12)-1)) %>% as.data.frame()
+
+
 sd(raw_citizen$A17_13) # A17-13. 전체 표준편차
 mean(raw_citizen$A17_13) # A17-13. 전체 5점 평균
 25*(mean(raw_citizen$A17_13-1)) # A17-13. 전체 100점 평균 환산
@@ -703,6 +894,22 @@ A17_13_data3 %>% # 소득별 5점평균
   summarise(mean5_A17_13 = mean(A17_13)) %>% as.data.frame()
 A17_13_data3 %>% # 소득별 100점평균
   group_by(DQ8_1) %>%
+  summarise(mean100_A17_13 = 25*(mean(A17_13)-1)) %>% as.data.frame()
+
+
+A17_13_data4 <- raw_citizen %>% # A17-13. 송전탑 가시거리 거주 구분
+  group_by(A17_13) %>% 
+  select(A1)
+t(table(A17_13_data4)) # 행렬변환
+
+A17_13_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_13 = sd(A17_13)) %>% as.data.frame()
+A17_13_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_13 = mean(A17_13)) %>% as.data.frame()
+A17_13_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
   summarise(mean100_A17_13 = 25*(mean(A17_13)-1)) %>% as.data.frame()
 
 
@@ -759,6 +966,22 @@ A17_14_data3 %>% # 소득별 100점평균
   summarise(mean100_A17_14 = 25*(mean(A17_14)-1)) %>% as.data.frame()
 
 
+A17_14_data4 <- raw_citizen %>% # A17-14. 송전탑 가시거리 거주 구분
+  group_by(A17_14) %>% 
+  select(A1)
+t(table(A17_14_data4)) # 행렬변환
+
+A17_14_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_14 = sd(A17_14)) %>% as.data.frame()
+A17_14_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_14 = mean(A17_14)) %>% as.data.frame()
+A17_14_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
+  summarise(mean100_A17_14 = 25*(mean(A17_14)-1)) %>% as.data.frame()
+
+
 sd(raw_citizen$A17_15) # A17-15. 전체 표준편차
 mean(raw_citizen$A17_15) # A17-15. 전체 5점 평균
 25*(mean(raw_citizen$A17_15-1)) # A17-15. 전체 100점 평균 환산
@@ -809,4 +1032,20 @@ A17_15_data3 %>% # 소득별 5점평균
   summarise(mean5_A17_15 = mean(A17_15)) %>% as.data.frame()
 A17_15_data3 %>% # 소득별 100점평균
   group_by(DQ8_1) %>%
+  summarise(mean100_A17_15 = 25*(mean(A17_15)-1)) %>% as.data.frame()
+
+
+A17_15_data4 <- raw_citizen %>% # A17-15. 송전탑 가시거리 거주 구분
+  group_by(A17_15) %>% 
+  select(A1)
+t(table(A17_15_data4)) # 행렬변환
+
+A17_15_data4 %>% # 송전탑 가시거리 거주별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A17_15 = sd(A17_15)) %>% as.data.frame()
+A17_15_data4 %>% # 송전탑 가시거리 거주별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A17_15 = mean(A17_15)) %>% as.data.frame()
+A17_15_data4 %>% # 송전탑 가시거리 거주별 100점평균
+  group_by(A1) %>%
   summarise(mean100_A17_15 = 25*(mean(A17_15)-1)) %>% as.data.frame()

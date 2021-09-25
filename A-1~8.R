@@ -102,6 +102,11 @@ A6_1_data3 <- raw_citizen %>% # A6_1. 소득 구분
   select(DQ8_1)
 t(table(A6_1_data3)) # 행렬변환
 
+A6_1_data4 <- raw_citizen %>% # A6_1. 송전탑 가시거리 거주 구분
+  group_by(A6_1) %>% 
+  select(A1)
+t(table(A6_1_data4)) # 행렬변환
+
 A6_2_data1 <- raw_citizen %>% # A6_2. 성별 구분
   group_by(A6_2) %>% 
   select(SQ1)
@@ -116,6 +121,11 @@ A6_2_data3 <- raw_citizen %>% # A6_2. 소득 구분
   group_by(A6_2) %>% 
   select(DQ8_1)
 t(table(A6_2_data3)) # 행렬변환
+
+A6_2_data4 <- raw_citizen %>% # A6_2. 송전탑 가시거리 거주 구분
+  group_by(A6_2) %>% 
+  select(A1)
+t(table(A6_2_data4)) # 행렬변환
 
 A7_1_data1 <- raw_citizen %>% # A7_1. 성별 구분
   group_by(A7_1) %>% 
@@ -132,6 +142,11 @@ A7_1_data3 <- raw_citizen %>% # A7_1. 소득 구분
   select(DQ8_1)
 t(table(A7_1_data3)) # 행렬변환
 
+A7_1_data4 <- raw_citizen %>% # A7_1. 송전탑 가시거리 거주 구분
+  group_by(A7_1) %>% 
+  select(A1)
+t(table(A7_1_data4)) # 행렬변환
+
 A7_2_data1 <- raw_citizen %>% # A7_2. 성별 구분
   group_by(A7_2) %>% 
   select(SQ1)
@@ -147,6 +162,10 @@ A7_2_data3 <- raw_citizen %>% # A7_2. 소득 구분
   select(DQ8_1)
 t(table(A7_2_data3)) # 행렬변환
 
+A7_2_data4 <- raw_citizen %>% # A7_2. 송전탑 가시거리 거주 구분
+  group_by(A7_2) %>% 
+  select(A1)
+t(table(A7_2_data4)) # 행렬변환
 
 A8_1_data1 <- raw_citizen %>% # A8_1. 성별 구분
   group_by(A8_1) %>% 
@@ -163,6 +182,11 @@ A8_1_data3 <- raw_citizen %>% # A8_1. 소득 구분
   select(DQ8_1)
 t(table(A8_1_data3)) # 행렬변환
 
+A8_1_data4 <- raw_citizen %>% # A8_1. 송전탑 가시거리 거주 구분
+  group_by(A8_1) %>% 
+  select(A1)
+t(table(A8_1_data4)) # 행렬변환
+
 A8_2_data1 <- raw_citizen %>% # A8_2. 성별 구분
   group_by(A8_2) %>% 
   select(SQ1)
@@ -177,3 +201,8 @@ A8_2_data3 <- raw_citizen %>% # A8_2. 소득 구분
   group_by(A8_2) %>% 
   select(DQ8_1)
 t(table(A8_2_data3)) # 행렬변환
+
+A8_2_data4 <- raw_citizen %>% # A8_2. 송전탑 가시거리 거주 구분
+  group_by(A8_2) %>% 
+  select(A1)
+t(table(A8_2_data4)) # 행렬변환

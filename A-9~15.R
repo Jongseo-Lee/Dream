@@ -78,6 +78,21 @@ A9_data3 %>% # 소득별 100점평균
   summarise(mean100_A9 = 25*(mean(A9)-1)) %>% as.data.frame()
 
 
+A9_data4 <- raw_citizen %>% # A9. 송전탑 가시거리 거주 구분
+  group_by(A9) %>% 
+  select(A1)
+t(table(A9_data4)) # 행렬변환
+A9_data4 %>% # 송전탑 가시거리 거주 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A9 = sd(A9)) %>% as.data.frame()
+A9_data4 %>% # 송전탑 가시거리 거주 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A9 = mean(A9)) %>% as.data.frame()
+A9_data4 %>% # 송전탑 가시거리 거주 100점평균
+  group_by(A1) %>%
+  summarise(mean100_A9 = 25*(mean(A9)-1)) %>% as.data.frame()
+
+
 A9_1_data1 <- raw_citizen %>% # A9-1. 성별 구분
   group_by(A9_1) %>% 
   select(SQ1)
@@ -103,6 +118,12 @@ t_A9_1_3 <- t(table(A9_1_data3)) # 행렬변환
 t_A9_1_3
 
 
+A9_1_data4 <- raw_citizen %>% # A9-1. 송전탑 가시거리 거주 구분
+  group_by(A9_1) %>% 
+  select(A1)
+t(table(A9_1_data4)) # 행렬변환
+
+
 A10_data1 <- raw_citizen %>% # A10. 성별 구분
   group_by(A10) %>% 
   select(SQ1)
@@ -126,6 +147,11 @@ table(A10_data3)
 t_A10_3 <- t(table(A10_data3)) # 행렬변환
 t_A10_3
 
+A10_data4 <- raw_citizen %>% # A10. 송전탑 가시거리 거주 구분
+  group_by(A10) %>% 
+  select(A1)
+t(table(A10_data4)) # 행렬변환
+
 A11_data1 <- raw_citizen %>% # A11. 성별 구분
   group_by(A11) %>% 
   select(SQ1)
@@ -148,6 +174,12 @@ A11_data3 <- raw_citizen %>% # A11. 소득별 구분
 table(A11_data3)
 t_A11_3 <- t(table(A11_data3)) # 행렬변환
 t_A11_3
+
+
+A11_data4 <- raw_citizen %>% # A11. 송전탑 가시거리 거주 구분
+  group_by(A11) %>% 
+  select(A1)
+t(table(A11_data4)) # 행렬변환
 
 
 sd(raw_citizen$A12) # A12. 전체 표준편차
@@ -205,6 +237,21 @@ A12_data3 %>% # 소득별 100점평균
   group_by(DQ8_1) %>%
   summarise(mean100_A12 = 25*(mean(A12)-1)) %>% as.data.frame()
 
+
+A12_data4 <- raw_citizen %>% # A12. 송전탑 가시거리 거주 구분
+  group_by(A12) %>% 
+  select(A1)
+t(table(A12_data4)) # 행렬변환
+A12_data4 %>% # 소득별 표준편차
+  group_by(A1) %>% 
+  summarise(sd_A12 = sd(A12)) %>% as.data.frame()
+A12_data4 %>% # 소득별 5점평균
+  group_by(A1) %>% 
+  summarise(mean5_A12 = mean(A12)) %>% as.data.frame()
+A12_data4 %>% # 소득별 100점평균
+  group_by(A1) %>%
+  summarise(mean100_A12 = 25*(mean(A12)-1)) %>% as.data.frame()
+
 A13_data1 <- raw_citizen %>% # A13. 성별 구분
   group_by(A13) %>% 
   select(SQ1)
@@ -221,6 +268,12 @@ A13_data3 <- raw_citizen %>% # A13. 소득별 구분
   group_by(A13) %>% 
   select(DQ8_1)
 t(table(A13_data3)) # 행렬변환
+
+
+A13_data4 <- raw_citizen %>% # A13. 송전탑 가시거리 거주 구분
+  group_by(A13) %>% 
+  select(A1)
+t(table(A13_data4)) # 행렬변환
 
 
 A14_data1 <- raw_citizen %>% # A14. 성별 구분
@@ -241,6 +294,12 @@ A14_data3 <- raw_citizen %>% # A14. 소득별 구분
 t(table(A14_data3)) # 행렬변환
 
 
+A14_data4 <- raw_citizen %>% # A14. 송전탑 가시거리 거주 구분
+  group_by(A14) %>% 
+  select(A1)
+t(table(A14_data4)) # 행렬변환
+
+
 A15_data1 <- raw_citizen %>% # A15. 성별 구분
   group_by(A15) %>% 
   select(SQ1)
@@ -259,4 +318,7 @@ A15_data3 <- raw_citizen %>% # A15. 소득별 구분
 t(table(A15_data3)) # 행렬변환
 
 
-
+A15_data4 <- raw_citizen %>% # A15. 송전탑 가시거리 거주 구분
+  group_by(A15) %>% 
+  select(A1)
+t(table(A15_data4)) # 행렬변환
