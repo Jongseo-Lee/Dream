@@ -27,20 +27,24 @@ raw_citizen$DQ8_1 <- ifelse(raw_citizen$DQ8_1 == 1, "100 만원 이하", # 가�
 
 raw_citizen$A1 <- ifelse(raw_citizen$A1 == 1, "네", "아니오") # 송전탑 가시거리 거주별
 
-raw_data <- raw_citizen %>% 
-  group_by(SQ1) %>% 
-  summarise("응답비율" = mean(A1))
+View(raw_citizen)
 
-raw_data
+raw_data <- raw_citizen %>% 
+  group_by(SQ1) %>%
+  summarise(("응답구분" = sum(A1 == "네") / n()) * 100)
+
+head(raw_data)
+
 A1_data1 <- raw_citizen %>% # A1. 성별 구분
   group_by(A1) %>% 
   select(SQ1)
 t(table(A1_data1))
 
 # 시각화
-A1_1_plot <- ggplot(A1_1_df, aes(x=SQ1, y=Freq, fill=A1)) +
+raw_data_plot <- ggplot(raw_data, aes(x=SQ1, y=Freq, fill=A1)) +
   geom_bar(stat="identity", position = "dodge2")
 
+raw_data_plot
 # 데이터 축
 A1_1_plot + ggtitle("A1. 귀하의 거주지 주변에 송전탑 및 송전선로가\n 존재합니까? (육안으로 볼 수 있는 거리)") +
   theme(plot.title = element_text(face = "bold", hjust = 0.5, size = 18)) +

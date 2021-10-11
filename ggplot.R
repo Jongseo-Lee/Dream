@@ -43,7 +43,6 @@ A1_1_df <- as.data.frame(A1_1_percent) # 데이터프레임화
 A1_1_plot <- ggplot(A1_1_df, aes(x=SQ1, y=Freq, fill=A1)) +
   geom_bar(stat="identity", position = "dodge2")
 
-# 데이터 축
 A1_1_plot + ggtitle("A1. 귀하의 거주지 주변에 송전탑 및 송전선로가\n 존재합니까? (육안으로 볼 수 있는 거리)") +
   theme(plot.title = element_text(face = "bold", hjust = 0.5, size = 18)) +
   theme(axis.title = element_text(face = "bold", hjust = 0.5, size = 15)) +
@@ -54,7 +53,6 @@ A1_1_plot + ggtitle("A1. 귀하의 거주지 주변에 송전탑 및 송전선�
   geom_text(aes(label = Freq), vjust = -0.5,
             position = position_dodge(.9), size = 4.5) +
   
-# 범례
   theme(legend.title = element_text(face = "bold", size = 15)) +
   theme(legend.text = element_text(face = "bold", size = 11)) +
   theme(legend.position = c(0.9,0.9))
