@@ -34,6 +34,7 @@ t(table(A1_data1))
 
 # 시각화를 위한 데이터 전처리
 A1_1_matrix <- as.matrix(t(table(A1_data1))) # 데이터 행렬화
+A1_1_matrix
 A1_1_percent <- prop.table(A1_1_matrix,1) * 100 # 백분율 산정
 A1_1_percent <- round(A1_1_percent, 1)
 A1_1_percent
