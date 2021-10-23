@@ -1,4 +1,4 @@
-library(dplyr) 
+library(dplyr)
 library(haven)
 library(ggplot2)
 library(scales)
@@ -16,7 +16,7 @@ View(raw_citizen)
 A1_data <- raw_citizen %>% # A1. 성별 구분
   select(A1)
 A1_matrix <- as.matrix(A1_data)
-A1_percent <- prop.table(table(a1)) * 100
+A1_percent <- prop.table(table(A1_matrix)) * 100
 A1_percent <- round(A1_percent, 1)
 A1_percent
 A1_df <- as.data.frame(A1_percent)

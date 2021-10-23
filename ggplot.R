@@ -3,6 +3,7 @@ library(haven)
 library(ggplot2)
 library(scales)
 library(RColorBrewer)
+library(esquisse)
 
 options(digits = 5) # 소수점 확대
 
@@ -27,34 +28,120 @@ raw_citizen$DQ8_1 <- ifelse(raw_citizen$DQ8_1 == 1, "100 만원 이하", # 가�
 
 raw_citizen$A1 <- ifelse(raw_citizen$A1 == 1, "네", "아니오") # 송전탑 가시거리 거주별
 
-A1_data1 <- raw_citizen %>% # A1. 성별 구분
-  group_by(A1) %>% 
-  select(SQ1)
-t(table(A1_data1))
+View(raw_citizen)
 
-# 시각화를 위한 데이터 전처리
-A1_1_matrix <- as.matrix(t(table(A1_data1))) # 데이터 행렬화
-A1_1_matrix
-A1_1_percent <- prop.table(A1_1_matrix,1) * 100 # 백분율 산정
-A1_1_percent <- round(A1_1_percent, 1)
-A1_1_percent
-A1_1_df <- as.data.frame(A1_1_percent) # 데이터프레임화
+A1_data <- raw_citizen %>% # A1. 데이터 전처리
+  select(A1)
+A1_matrix <- as.matrix(A1_data)
+A1_percent <- prop.table(table(A1_matrix)) * 100
+A1_percent <- round(A1_percent, 1)
+A1_df <- as.data.frame(A1_percent)
+A1_df
 
-# 시각화
-A1_1_plot <- ggplot(A1_1_df, aes(x=SQ1, y=Freq, fill=A1)) +
-  geom_bar(stat="identity", position = "dodge2")
+ggplot(A1_df) + # A1. 시각화
+ aes(x = A1_matrix, weight = Freq) +
+ geom_bar(fill = "#4682B4") +
+ geom_text(stat = "count", aes(label = ..count.., vjust = -0.7)) +
+ labs(x = "응답구분", 
+ y = "응답비율", title = "A1.", subtitle = "시흥시민 364명 대상") +
+ theme_minimal() +
+ theme(plot.title = element_text(size = 15L, 
+ face = "bold", hjust = 0.5), plot.subtitle = element_text(size = 12L, hjust = 0.5), axis.title.y = element_text(size = 15L, 
+ face = "bold"), axis.title.x = element_text(size = 15L, face = "bold"))
 
-A1_1_plot + ggtitle("A1. 귀하의 거주지 주변에 송전탑 및 송전선로가\n 존재합니까? (육안으로 볼 수 있는 거리)") +
-  theme(plot.title = element_text(face = "bold", hjust = 0.5, size = 18)) +
-  theme(axis.title = element_text(face = "bold", hjust = 0.5, size = 15)) +
-  labs(x="성별구분", y="응답비율", fill = "응답구분") +
-  scale_y_continuous(breaks = c(20,40,60,80),
-                     labels = c("20%","40%","60%","80%")) +
 
-  geom_text(aes(label = Freq), vjust = -0.5,
-            position = position_dodge(.9), size = 4.5) +
-  
-  theme(legend.title = element_text(face = "bold", size = 15)) +
-  theme(legend.text = element_text(face = "bold", size = 11)) +
-  theme(legend.position = c(0.9,0.9))
+A1_2_data <- raw_citizen %>% # A1-2. 데이터 전처리
+  select(A1_2)
+A1_2_matrix <- as.matrix(A1_2_data)
+A1_2_percent <- prop.table(table(A1_2_matrix)) * 100
+A1_2_percent <- round(A1_2_percent, 1)
+A1_2_df <- as.data.frame(A1_2_percent)
+A1_2_df
 
+ggplot(A1_2_df) + # A1-2. 시각화
+  aes(x = A1_2_matrix, weight = Freq) +
+  geom_bar(fill = "#4682B4") +
+  geom_text(stat = "count", aes(label = ..count.., vjust = -0.7)) +
+  labs(x = "응답구분", 
+       y = "응답비율", title = "A1-2.", subtitle = "시흥시민 364명 대상") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 15L, 
+                                  face = "bold", hjust = 0.5), plot.subtitle = element_text(size = 13L, hjust = 0.5), axis.title.y = element_text(size = 15L, 
+                                                                                                                                                  face = "bold"), axis.title.x = element_text(size = 15L, face = "bold"))
+
+A4_data <- raw_citizen %>% # A4. 데이터 전처리
+  select(A4)
+A4_matrix <- as.matrix(A4_data)
+A4_percent <- prop.table(table(A4_matrix)) * 100
+A4_percent <- round(A4_percent, 1)
+A4_df <- as.data.frame(A4_percent)
+A4_df
+
+ggplot(A4_df) + # A4. 시각화
+  aes(x = A4_matrix, weight = Freq) +
+  geom_bar(fill = "#4682B4") +
+  geom_text(stat = "count", aes(label = ..count.., vjust = -0.7)) +
+  labs(x = "응답구분", 
+       y = "응답비율", title = "A4.", subtitle = "시흥시민 364명 대상") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 15L, 
+                                  face = "bold", hjust = 0.5), plot.subtitle = element_text(size = 12L, hjust = 0.5), axis.title.y = element_text(size = 15L, 
+                                                                                                                                                  face = "bold"), axis.title.x = element_text(size = 15L, face = "bold"))
+
+A5_data <- raw_citizen %>% # A5. 데이터 전처리
+  select(A5)
+A5_matrix <- as.matrix(A5_data)
+A5_percent <- prop.table(table(A5_matrix)) * 100
+A5_percent <- round(A5_percent, 1)
+A5_df <- as.data.frame(A5_percent)
+A5_df
+
+ggplot(A5_df) + # A5. 시각화
+  aes(x = A5_matrix, weight = Freq) +
+  geom_bar(fill = "#4682B4") +
+  geom_text(stat = "count", aes(label = ..count.., vjust = -0.7)) +
+  labs(x = "응답구분", 
+       y = "응답비율", title = "A5.", subtitle = "시흥시민 364명 대상") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 15L, 
+                                  face = "bold", hjust = 0.5), plot.subtitle = element_text(size = 12L, hjust = 0.5), axis.title.y = element_text(size = 15L, 
+                                                                                                                                                  face = "bold"), axis.title.x = element_text(size = 15L, face = "bold"))
+
+A6_1_data <- raw_citizen %>% # A6-1. 데이터 전처리
+  select(A6_1)
+A6_1_matrix <- as.matrix(A6_1_data)
+A6_1_percent <- prop.table(table(A6_1_matrix)) * 100
+A6_1_percent <- round(A6_1_percent, 1)
+A6_1_df <- as.data.frame(A6_1_percent)
+A6_1_df <- rename(A6_1_df, A6_matrix = A6_1_matrix)
+A6_1_df <- A6_1_df %>% mutate(group=1)
+A6_1_df
+A6_2_data <- raw_citizen %>% # A6-2. 데이터 전처리
+  select(A6_2)
+A6_2_matrix <- as.matrix(A6_2_data)
+A6_2_percent <- prop.table(table(A6_2_matrix)) * 100
+A6_2_percent <- round(A6_2_percent, 1)
+A6_2_df <- as.data.frame(A6_2_percent)
+A6_2_df <- rename(A6_2_df, A6_matrix = A6_2_matrix)
+A6_2_df <- A6_2_df %>% mutate(group=2)
+A6_2_df
+A6_df2 <- left_join(A6_1_df,A6_2_df, by = "A6_matrix")
+A6_df2
+A6_df <- bind_rows(A6_1_df,A6_2_df)
+A6_df
+
+
+ggplot(A6_df2, aes(x = A6_matrix)) +
+ geom_bar(stat = "identity", aes(y = Freq.x)) +
+ geom_line(stat = "identity", aes(y = Freq.y))+
+ theme_minimal()
+
+
+ggplot(A6_df) +
+ aes(x = A6_matrix, weight = Freq) +
+ geom_bar(fill = "#112446") +
+ theme_minimal() +
+ facet_wrap(vars(group))
+
+ggplot(A6_df2, aes(x = A6_matrix, y = Freq.x)) + # A6-1. 시각화
+  geom_bar(fill = "#4682B4")
