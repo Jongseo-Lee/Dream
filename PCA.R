@@ -10,7 +10,7 @@ head(df_A16)
 
 pc1 <- prcomp(df_A16)
 summary(pc1)
-pc1$rotation
+pc1$rotation[,1]
 pc1$sdev^2
 
 screeplot(pc1, type = "l")
@@ -43,11 +43,11 @@ head(df_A17_2)
 
 pc2_1 <- prcomp(df_A17_2)
 summary(pc2_1)
-pc2_1$rotation
+round(pc2_1$rotation,5)
 pc2_1$sdev^2
 
 screeplot(pc2_1, type = "l")
-
+windows()
 factor_A17_3 <- factanal(df_A17_2, factors = 3, rotation = "varimax")
 factor_A17_3$loadings
 factor_A17_4 <- factanal(df_A17_2, factors = 3, rotation = "oblimin")
