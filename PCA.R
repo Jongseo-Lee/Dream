@@ -1,42 +1,54 @@
-library(ggplot2)
-library(reshape2)
+library(dplyr)
+library(haven)
+library(psych)
+library(GPArotation)
 
-# A_16 데이터 전처리
-rawdata <- read_spss("Rawdata.sav")
-rawdata_A16 <- rawdata %>% 
+df <- read_spss("Rawdata.sav")
+df_A16 <- df %>% 
   select(A16_1:A16_6)
-head(rawdata_A16)
+head(df_A16)
 
-# A_16 PCA분석
-pca_rawdata_A16 <- prcomp(rawdata_A16, scale = TRUE)
-summary(pca_rawdata_A16)
-biplot(pca_rawdata_A16)
+pc1 <- prcomp(df_A16)
+summary(pc1)
+pc1$rotation
+pc1$sdev^2
 
-# A_16 상관관계 시각화
-rawdata_A16_cor <- round(cor(rawdata_A16),2)
-melt_A16 <- melt(rawdata_A16_cor)
-ggplot(melt_A16, aes(x=Var1, y=Var2, fill=value)) +
-  geom_tile(color="white") +
-  scale_fill_gradient2(low="white", high="red",
-                       space = "Lab") +
-  geom_text(aes(label=value), color = "black", size=4)
+screeplot(pc1, type = "l")
 
-# A_17 데이터 전처리
-rawdata <- read_spss("Rawdata.sav")
-rawdata_A17 <- rawdata %>% 
+factor_A16_1 <- factanal(df_A16, factors = 3, rotation = "varimax")
+factor_A16_1$loadings
+factor_A16_2 <- factanal(df_A16, factors = 3, rotation = "oblimin")
+factor_A16_2$loadings
+
+
+df_A17 <- df %>% 
   select(A17_1:A17_15)
-head(rawdata_A17)
+head(df_A17)
 
-# A_17 PCA분석
-pca_rawdata_A17 <- prcomp(rawdata_A17, scale = TRUE)
-summary(pca_rawdata_A17)
-biplot(pca_rawdata_A17)
+pc2 <- prcomp(df_A17)
+summary(pc2)
+pc2$rotation
+pc2$sdev^2
 
-# A_17 상관관계 시각화
-rawdata_A17_cor <- round(cor(rawdata_A17),2)
-melt_A17 <- melt(rawdata_A17_cor)
-ggplot(melt_A17, aes(x=Var1, y=Var2, fill=value)) +
-  geom_tile(color="white") +
-  scale_fill_gradient2(low="white", high="red",
-                       space = "Lab") +
-  geom_text(aes(label=value), color = "black", size=4)
+screeplot(pc2, type = "l")
+
+factor_A17_1 <- factanal(df_A17, factors = 3, rotation = "varimax")
+factor_A17_1$loadings
+factor_A17_2 <- factanal(df_A17, factors = 3, rotation = "oblimin")
+factor_A17_2$loadings
+
+df_A17_2 <- df %>% 
+  select(A17_8:A17_15)
+head(df_A17_2)
+
+pc2_1 <- prcomp(df_A17_2)
+summary(pc2_1)
+pc2_1$rotation
+pc2_1$sdev^2
+
+screeplot(pc2_1, type = "l")
+
+factor_A17_3 <- factanal(df_A17_2, factors = 3, rotation = "varimax")
+factor_A17_3$loadings
+factor_A17_4 <- factanal(df_A17_2, factors = 3, rotation = "oblimin")
+factor_A17_4$loadings

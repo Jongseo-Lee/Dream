@@ -131,17 +131,17 @@ A6_df <- bind_rows(A6_1_df,A6_2_df)
 A6_df
 
 
-ggplot(A6_df2, aes(x = A6_matrix)) +
- geom_bar(stat = "identity", aes(y = Freq.x)) +
- geom_line(stat = "identity", aes(y = Freq.y))+
- theme_minimal()
-
-
-ggplot(A6_df) +
- aes(x = A6_matrix, weight = Freq) +
- geom_bar(fill = "#112446") +
+ggplot(A6_df2) +
+ geom_col(aes(x = A6_matrix, y = Freq.x), fill = "#4682B4") +
+ geom_text(aes(label = Freq.x, x = A6_matrix, y = Freq.x), vjust = 1.2, color = "white") +
+ geom_line(aes(x = A6_matrix, y = Freq.y, group = 1)) +
+ geom_point(aes(x = A6_matrix, y = Freq.y, group = 1)) +
+ geom_text(aes(label = Freq.y, x = A6_matrix, y = Freq.y, vjust = -1.0)) +
+ labs(x = "응답구분", 
+      y = "응답비율", title = "A6.", subtitle = "시흥시민 364명 대상") +
  theme_minimal() +
- facet_wrap(vars(group))
-
-ggplot(A6_df2, aes(x = A6_matrix, y = Freq.x)) + # A6-1. 시각화
-  geom_bar(fill = "#4682B4")
+theme(plot.title = element_text(size = 15L, 
+                                face = "bold", hjust = 0.5), plot.subtitle = element_text(size = 12L, hjust = 0.5), axis.title.y = element_text(size = 15L, 
+                                                                                                                                                 face = "bold"), axis.title.x = element_text(size = 15L, face = "bold"))
+  
+  
