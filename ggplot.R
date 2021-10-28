@@ -130,7 +130,7 @@ A6_df2
 A6_df <- bind_rows(A6_1_df,A6_2_df)
 A6_df
 
-
+windows()
 ggplot(A6_df2) +
  geom_col(aes(x = A6_matrix, y = Freq.x), fill = "#4682B4") +
  geom_text(aes(label = Freq.x, x = A6_matrix, y = Freq.x), vjust = 1.2, color = "white") +
@@ -138,7 +138,7 @@ ggplot(A6_df2) +
  geom_point(aes(x = A6_matrix, y = Freq.y, group = 1)) +
  geom_text(aes(label = Freq.y, x = A6_matrix, y = Freq.y, vjust = -1.0)) +
  labs(x = "응답구분", 
-      y = "응답비율", title = "A6.", subtitle = "시흥시민 364명 대상") +
+      y = "응답비율", title = "A6.송전탑 건립 입지문제와 관련하여 지역주민반발이\n과격화, 폭력화 되는 원인은 무엇이라고 보십니까?", subtitle = "시흥시민 364명 대상") +
  theme_minimal() +
 theme(plot.title = element_text(size = 15L, 
                                 face = "bold", hjust = 0.5), plot.subtitle = element_text(size = 12L, hjust = 0.5), axis.title.y = element_text(size = 15L, 

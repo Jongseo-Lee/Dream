@@ -10,7 +10,7 @@ head(df_A16)
 
 pc1 <- prcomp(df_A16)
 summary(pc1)
-pc1$rotation[,1]
+pc1$rotation
 pc1$sdev^2
 
 screeplot(pc1, type = "l")
