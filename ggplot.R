@@ -373,7 +373,6 @@ A12_data3 <- raw_citizen %>% # A12. 5점 척도 연령별 데이터 전처리
   group_by(SQ2_2, A1) %>% 
   summarise(mean_A12 = mean(A12))
 
-windows()
 ggplot(A12_data3) + # A12. 5점 척도 연령별 시각화
   aes(x = SQ2_2, y = mean_A12, fill = A1) +
   geom_col(position = "dodge") +
@@ -462,7 +461,7 @@ A16_1_matrix <- as.matrix(A16_1_data)
 A16_1_percent <- prop.table(table(A16_1_matrix)) * 100
 A16_1_percent <- round(A16_1_percent, 1)
 A16_1_df <- as.data.frame(A16_1_percent)
-windows()
+
 ggplot(A16_1_df) + # A16_1. 시각화
   aes(x = A16_1_matrix, weight = Freq) +
   geom_bar(fill = "#4682B4") +
