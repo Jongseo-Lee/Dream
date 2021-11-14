@@ -1,5 +1,4 @@
 library(poLCA)
-library(vcd)
 library(dplyr)
 library(haven)
 
@@ -40,6 +39,7 @@ summary(df_4)
 cor(df_4)
 
 result_4 <- ifelse(df_4 > df_4_mean, 2, 1)
+
 rawdata$result_1 <- result_1
 tail(result_1)
 View(rawdata)
