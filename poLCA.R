@@ -68,6 +68,15 @@ var(rawdata$A17_9)
 var(rawdata$A17_10)
 
 result_4 <- ifelse(df_4 > df_4_mean, 2, 1)
+result_4
 
+rawdata$result_1 <- result_1
+rawdata$result_2 <- result_2
+rawdata$result_3 <- result_3
+rawdata$result_4 <- result_4
+
+a <- cbind(result_1,result_2,result_3,result_4)
+a <- as.data.frame(a)
+View(rawdata$result_1)
 df <- cbind(result_1, result_2, result_3, result_4)~1
-LCA <- poLCA(df, data=rawdata, nclass = 4)
+LCA <- poLCA(df, data=a, nclass = 4)
