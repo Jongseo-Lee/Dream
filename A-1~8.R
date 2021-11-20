@@ -6,7 +6,6 @@ library(RColorBrewer)
 
 options(digits = 5) # 소수점 확대
 
-windows()
 rawdata <- read_spss("Rawdata.sav")
 table(is.na(rawdata))
 raw_citizen <- rawdata %>% # 시흥시민 364명 필터링
