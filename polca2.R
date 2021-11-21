@@ -360,3 +360,65 @@ mean(as.matrix(class4_method5))
 class4_method6 <- class4 %>%
   select(A16_6)
 mean(as.matrix(class4_method6))
+
+# 전체 데이터
+
+# class. 성별 구분
+class_sex <- rawdata1 %>%
+  select(SQ1)
+t_1 <- table(class_sex)
+prop.table(t_1)
+
+# class. 연령대 구분
+class_age <- rawdata1 %>%
+  select(SQ2_2)
+t_2 <- table(class_age)
+prop.table(t_2)
+
+# class. 소득 구분
+class_income <- rawdata1 %>%
+  select(DQ8_1)
+t_3 <- table(class_income)
+prop.table(t_3)
+
+# class. 송전탑 가시거리 거주 구분
+class_distance <- rawdata1 %>%
+  select(A1)
+t_4 <- table(class_distance)
+prop.table(t_4)
+
+# class. 수용성
+class_reseptivity <- rawdata1 %>%
+  select(A13)
+t_5 <- table(class_reseptivity)
+prop.table(t_5)
+
+# class. 보상만족도
+class_satisfaction <- rawdata1 %>%
+  select(A9)
+mean(as.matrix(class_satisfaction))
+
+# class. 보상방안
+class_method1 <- rawdata1 %>%
+  select(A16_1)
+mean(as.matrix(class_method1))
+
+class_method2 <- rawdata1 %>%
+  select(A16_2)
+mean(as.matrix(class_method2))
+
+class_method3 <- rawdata1 %>%
+  select(A16_3)
+mean(as.matrix(class_method3))
+
+class_method4 <- rawdata1 %>%
+  select(A16_4)
+mean(as.matrix(class_method4))
+
+class_method5 <- rawdata1 %>%
+  select(A16_5)
+mean(as.matrix(class_method5))
+
+class_method6 <- rawdata1 %>%
+  select(A16_6)
+mean(as.matrix(class_method6))
