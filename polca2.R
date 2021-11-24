@@ -79,6 +79,7 @@ r <- cbind(result1, result2, result3, result4, result5, result6, result7,
            result8, result9, result10)~1
 set.seed(123)
 lca <- poLCA(r, data=rawdata, nclass = 4)
+lca
 
 # rawdata 계층구분
 rawdata1 <- cbind(rawdata, lca$predclass)
@@ -422,3 +423,4 @@ mean(as.matrix(class_method5))
 class_method6 <- rawdata1 %>%
   select(A16_6)
 mean(as.matrix(class_method6))
+
