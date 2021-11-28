@@ -1,6 +1,7 @@
 library(poLCA)
 library(dplyr)
 library(haven)
+library(tidyverse)
 
 rawdata <- read_spss("Rawdata.sav")
 
@@ -424,3 +425,55 @@ class_method6 <- rawdata1 %>%
   select(A16_6)
 mean(as.matrix(class_method6))
 
+count(class4)
+
+item_label = c('A.17-01', 'A.17-02', 'A.17-03', 'A.17-04', 'A.17-05', 'A.17-06',
+               'A.17-07', 'A.17-08', 'A.17-09', 'A.17-10')
+
+item_resp_prob = lca$probs
+item_resp_prob[[1]] %>% as_tibble()
+
+table = list()
+for (i in 1:10) {
+  table=bind_rows(table,
+        item_resp_prob[[i]] %>% as_tibble() %>% 
+          mutate(item=i, class=1:4)) %>% 
+    select(-'Pr(1)')
+}
+table = table %>% 
+  mutate(item = rep(item_label, each=4))
+table
+table %>% 
+  spread(key=class, value='Pr(2)')
+windows()
+
+table %>% ggplot()+
+  geom_bar(aes(x=item, y=`Pr(2)`), stat='identity')+
+  labs(x="문항", y="평균이상 응답")+
+  coord_flip()+
+  theme_bw()+theme(legend.position = "top")+
+  facet_wrap(~class)
+  
+class_name = c("4번집단(19%)","3번집단(28%)","2번집단(13%)","1번집단(40%)")
+visual = table %>% 
+  mutate(class_name = rep(class_name,10),
+    item_cluster = fct_recode(item, "문제인식"="A.17-01",
+                              "문제인식"="A.17-02",
+                              "문제인식"="A.17-03",
+                              "주민참여"="A.17-04",
+                              "주민참여"="A.17-05",
+                              "주민참여"="A.17-06",
+                              "건강위험"="A.17-07",
+                              "건강위험"="A.17-08",
+                              "경제적위험"="A.17-09",
+                              "경제적위험"="A.17-10"),
+    item = fct_reorder(item, as.numeric(factor(item_cluster))))
+
+visual %>% ggplot()+
+  geom_bar(aes(x=item, y=`Pr(2)`, fill=item_cluster), stat = "identity")+
+  labs(x="설문문항", y="그룹평균 이상 응답확률", fill="설문 영역")+
+  coord_flip()+
+  theme_bw()+theme(legend.position = "top")+
+  facet_wrap(~class_name)
+lca$P
+  

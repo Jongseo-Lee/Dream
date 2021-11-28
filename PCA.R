@@ -26,6 +26,7 @@ df_A17 <- df %>%
 head(df_A17)
 
 pc2 <- prcomp(df_A17)
+pc2
 summary(pc2)
 round(pc2$rotation,3)
 round(pc2$sdev^2,5)
