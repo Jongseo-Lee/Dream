@@ -105,48 +105,48 @@ rawdata1$A1 <- ifelse(rawdata1$A1 == 1, "네", "아니오") # 송전탑 가시�
 
 options(digits = 4) # 소수점 확대
 
-# 1번 계층
+# 4번 계층
 class1 <- rawdata1 %>% 
   filter(`lca$predclass`==1)
 
-# class1. 성별 구분
+# class4. 성별 구분
 class1_sex <- class1 %>%
   select(SQ1)
 t1_1 <- table(class1_sex)
 prop.table(t1_1)
 
-# class1. 연령대 구분
+# class4. 연령대 구분
 class1_age <- class1 %>%
   select(SQ2_2)
 t1_2 <- table(class1_age)
 prop.table(t1_2)
 
-# class1. 소득 구분
+# class4. 소득 구분
 class1_income <- class1 %>%
   select(DQ8_1)
 t1_3 <- table(class1_income)
 prop.table(t1_3)
 
-# class1. 송전탑 가시거리 거주 구분
+# class4. 송전탑 가시거리 거주 구분
 class1_distance <- class1 %>%
   select(A1)
 t1_4 <- table(class1_distance)
 prop.table(t1_4)
 
-# class1. 수용성
+# class4. 수용성
 class1_reseptivity <- class1 %>%
   select(A13)
 t1_5 <- table(class1_reseptivity)
 prop.table(t1_5)
 
-# class1. 보상만족도
+# class4. 보상만족도
 class1_satisfaction <- class1 %>%
   select(A9)
 mean(as.matrix(class1_satisfaction))
 t1_6 <- table(class1_satisfaction)
 prop.table(t1_6)
 
-# class1. 보상방안
+# class4. 보상방안
 class1_method1 <- class1 %>%
   select(A16_1)
 mean(as.matrix(class1_method1))
@@ -171,46 +171,89 @@ class1_method6 <- class1 %>%
   select(A16_6)
 mean(as.matrix(class1_method6))
 
-#2번 계층
+# class4. 문4
+class1_q4 <- class1 %>%
+  select(A4)
+t_q4 <- table(class1_q4)
+prop.table(t_q4)
+
+# class4. 문5
+class1_q5 <- class1 %>%
+  select(A5)
+t_q5 <- table(class1_q5)
+prop.table(t_q5)
+
+# class4. 문6 1순위
+class1_q6 <- class1 %>%
+  select(A6_1)
+t_q6 <- table(class1_q6)
+prop.table(t_q6)
+
+# class4. 문7 1순위
+class1_q7 <- class1 %>%
+  select(A7_1)
+t_q7 <- table(class1_q7)
+prop.table(t_q7)
+
+# class4. 문8
+class1_q8 <- class1 %>%
+  select(A8_1)
+t_q8 <- table(class1_q8)
+prop.table(t_q8)
+
+# class4. 문9
+class1_q9 <- class1 %>%
+  select(A9)
+mean(as.matrix(class1_q9))
+sd(as.matrix(class1_q9))
+
+# class4. 문12
+class1_q12 <- class1 %>%
+  select(A12)
+mean(as.matrix(class1_q12))
+sd(as.matrix(class1_q12))
+
+
+# 3번 계층
 class2 <- rawdata1 %>% 
   filter(`lca$predclass`==2)
 
-# class2. 성별 구분
+# class3. 성별 구분
 class2_sex <- class2 %>%
   select(SQ1)
 t2_1 <- table(class2_sex)
 prop.table(t2_1)
 
-# class2. 연령대 구분
+# class3. 연령대 구분
 class2_age <- class2 %>%
   select(SQ2_2)
 t2_2 <- table(class2_age)
 prop.table(t2_2)
 
-# class2. 소득 구분
+# class3. 소득 구분
 class2_income <- class2 %>%
   select(DQ8_1)
 t2_3 <- table(class2_income)
 prop.table(t2_3)
 
-# class2. 송전탑 가시거리 거주 구분
+# class3. 송전탑 가시거리 거주 구분
 class2_distance <- class2 %>%
   select(A1)
 t2_4 <- table(class2_distance)
 prop.table(t2_4)
 
-# class2. 수용성
+# class3. 수용성
 class2_reseptivity <- class2 %>%
   select(A13)
 t2_5 <- table(class2_reseptivity)
 prop.table(t2_5)
 
-# class2. 보상만족도
+# class3. 보상만족도
 class2_satisfaction <- class2 %>%
   select(A9)
 mean(as.matrix(class2_satisfaction))
 
-# class2. 보상방안
+# class3. 보상방안
 class2_method1 <- class2 %>%
   select(A16_1)
 mean(as.matrix(class2_method1))
@@ -235,46 +278,88 @@ class2_method6 <- class2 %>%
   select(A16_6)
 mean(as.matrix(class2_method6))
 
-#3번 계층
+# class3. 문4
+class2_q4 <- class2 %>%
+  select(A4)
+t2_q4 <- table(class2_q4)
+prop.table(t2_q4)
+
+# class3. 문5
+class2_q5 <- class2 %>%
+  select(A5)
+t2_q5 <- table(class2_q5)
+prop.table(t2_q5)
+
+# class3. 문6 1순위
+class2_q6 <- class2 %>%
+  select(A6_1)
+t2_q6 <- table(class2_q6)
+prop.table(t2_q6)
+
+# class3. 문7 1순위
+class2_q7 <- class2 %>%
+  select(A7_1)
+t2_q7 <- table(class2_q7)
+prop.table(t2_q7)
+
+# class3. 문8
+class2_q8 <- class2 %>%
+  select(A8_1)
+t2_q8 <- table(class2_q8)
+prop.table(t2_q8)
+
+# class3. 문9
+class2_q9 <- class2 %>%
+  select(A9)
+mean(as.matrix(class2_q9))
+sd(as.matrix(class2_q9))
+
+# class3. 문12
+class2_q12 <- class2 %>%
+  select(A12)
+mean(as.matrix(class2_q12))
+sd(as.matrix(class2_q12))
+
+# 2번 계층
 class3 <- rawdata1 %>% 
   filter(`lca$predclass`==3)
 
-# class3. 성별 구분
+# class2. 성별 구분
 class3_sex <- class3 %>%
   select(SQ1)
 t3_1 <- table(class3_sex)
 prop.table(t3_1)
 
-# class3. 연령대 구분
+# class2. 연령대 구분
 class3_age <- class3 %>%
   select(SQ2_2)
 t3_2 <- table(class3_age)
 prop.table(t3_2)
 
-# class3. 소득 구분
+# class2. 소득 구분
 class3_income <- class3 %>%
   select(DQ8_1)
 t3_3 <- table(class3_income)
 prop.table(t3_3)
 
-# class3. 송전탑 가시거리 거주 구분
+# class2. 송전탑 가시거리 거주 구분
 class3_distance <- class3 %>%
   select(A1)
 t3_4 <- table(class3_distance)
 prop.table(t3_4)
 
-# class3. 수용성
+# class2. 수용성
 class3_reseptivity <- class3 %>%
   select(A13)
 t3_5 <- table(class3_reseptivity)
 prop.table(t3_5)
 
-# class3. 보상만족도
+# class2. 보상만족도
 class3_satisfaction <- class3 %>%
   select(A9)
 mean(as.matrix(class3_satisfaction))
 
-# class3. 보상방안
+# class2. 보상방안
 class3_method1 <- class3 %>%
   select(A16_1)
 mean(as.matrix(class3_method1))
@@ -299,46 +384,88 @@ class3_method6 <- class3 %>%
   select(A16_6)
 mean(as.matrix(class3_method6))
 
-#4번 계층
+# class2. 문4
+class3_q4 <- class3 %>%
+  select(A4)
+t3_q4 <- table(class3_q4)
+prop.table(t3_q4)
+
+# class2. 문5
+class3_q5 <- class3 %>%
+  select(A5)
+t3_q5 <- table(class3_q5)
+prop.table(t3_q5)
+
+# class2. 문6 1순위
+class3_q6 <- class3 %>%
+  select(A6_1)
+t3_q6 <- table(class3_q6)
+prop.table(t3_q6)
+
+# class2. 문7 1순위
+class3_q7 <- class3 %>%
+  select(A7_1)
+t3_q7 <- table(class3_q7)
+prop.table(t3_q7)
+
+# class2. 문8
+class3_q8 <- class3 %>%
+  select(A8_1)
+t3_q8 <- table(class3_q8)
+prop.table(t3_q8)
+
+# class2. 문9
+class3_q9 <- class3 %>%
+  select(A9)
+mean(as.matrix(class3_q9))
+sd(as.matrix(class3_q9))
+
+# class2. 문12
+class3_q12 <- class3 %>%
+  select(A12)
+mean(as.matrix(class3_q12))
+sd(as.matrix(class3_q12))
+
+# 1번 계층
 class4 <- rawdata1 %>% 
   filter(`lca$predclass`==4)
 
-# class4. 성별 구분
+# class1. 성별 구분
 class4_sex <- class4 %>%
   select(SQ1)
 t4_1 <- table(class4_sex)
 prop.table(t4_1)
 
-# class4. 연령대 구분
+# class1. 연령대 구분
 class4_age <- class4 %>%
   select(SQ2_2)
 t4_2 <- table(class4_age)
 prop.table(t4_2)
 
-# class4. 소득 구분
+# class1. 소득 구분
 class4_income <- class4 %>%
   select(DQ8_1)
 t4_3 <- table(class4_income)
 prop.table(t4_3)
 
-# class4. 송전탑 가시거리 거주 구분
+# class1. 송전탑 가시거리 거주 구분
 class4_distance <- class4 %>%
   select(A1)
 t4_4 <- table(class4_distance)
 prop.table(t4_4)
 
-# class4. 수용성
+# class1. 수용성
 class4_reseptivity <- class4 %>%
   select(A13)
 t4_5 <- table(class4_reseptivity)
 prop.table(t4_5)
 
-# class4. 보상만족도
+# class1. 보상만족도
 class4_satisfaction <- class4 %>%
   select(A9)
 mean(as.matrix(class4_satisfaction))
 
-# class4. 보상방안
+# class1. 보상방안
 class4_method1 <- class4 %>%
   select(A16_1)
 mean(as.matrix(class4_method1))
@@ -362,6 +489,48 @@ mean(as.matrix(class4_method5))
 class4_method6 <- class4 %>%
   select(A16_6)
 mean(as.matrix(class4_method6))
+
+# class1. 문4
+class4_q4 <- class4 %>%
+  select(A4)
+t4_q4 <- table(class4_q4)
+prop.table(t4_q4)
+
+# class1. 문5
+class4_q5 <- class4 %>%
+  select(A5)
+t4_q5 <- table(class4_q5)
+prop.table(t4_q5)
+
+# class1. 문6 1순위
+class4_q6 <- class4 %>%
+  select(A6_1)
+t4_q6 <- table(class4_q6)
+prop.table(t4_q6)
+
+# class1. 문7 1순위
+class4_q7 <- class4 %>%
+  select(A7_1)
+t4_q7 <- table(class4_q7)
+prop.table(t4_q7)
+
+# class1. 문8
+class4_q8 <- class4 %>%
+  select(A8_1)
+t4_q8 <- table(class4_q8)
+prop.table(t4_q8)
+
+# class1. 문9
+class4_q9 <- class4 %>%
+  select(A9)
+mean(as.matrix(class4_q9))
+sd(as.matrix(class4_q9))
+
+# class1. 문12
+class4_q12 <- class4 %>%
+  select(A12)
+mean(as.matrix(class4_q12))
+sd(as.matrix(class4_q12))
 
 # 전체 데이터
 
@@ -425,7 +594,53 @@ class_method6 <- rawdata1 %>%
   select(A16_6)
 mean(as.matrix(class_method6))
 
-count(class4)
+# class. 문4
+class_Q4 <- rawdata1 %>%
+  select(A4)
+t1_1 <- table(class_Q4)
+prop.table(t1_1)
+
+# class. 문5
+class_Q5 <- rawdata1 %>%
+  select(A5)
+t1_2 <- table(class_Q5)
+prop.table(t1_2)
+
+# class. 문6_1
+class_Q6 <- rawdata1 %>%
+  select(A6_1)
+t1_3 <- table(class_Q6)
+prop.table(t1_3)
+
+# class. 문7_1
+class_Q7 <- rawdata1 %>%
+  select(A7_1)
+t1_4 <- table(class_Q7)
+prop.table(t1_4)
+
+# class. 문8_1
+class_Q8 <- rawdata1 %>%
+  select(A8_1)
+t1_5 <- table(class_Q8)
+prop.table(t1_5)
+
+# class. 문9
+class_Q9 <- rawdata1 %>%
+  select(A9)
+mean(as.matrix(class_Q9))
+sd(as.matrix(class_Q9))
+
+# class. 문12
+class_Q12 <- rawdata1 %>%
+  select(A12)
+mean(as.matrix(class_Q12))
+sd(as.matrix(class_Q12))
+
+# class. 연령대 구분
+class_age <- rawdata1 %>%
+  select(SQ2_2)
+t_2 <- table(class_age)
+prop.table(t_2)
 
 item_label = c('A.17-01', 'A.17-02', 'A.17-03', 'A.17-04', 'A.17-05', 'A.17-06',
                'A.17-07', 'A.17-08', 'A.17-09', 'A.17-10')
