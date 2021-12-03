@@ -101,6 +101,19 @@ rawdata1$DQ8_1 <- ifelse(rawdata1$DQ8_1 == 1, "100 만원 이하", # 가구소�
                                           ifelse(rawdata1$DQ8_1 %in% c(6), "300~400만원",
                                                  ifelse(rawdata1$DQ8_1 %in% c(7,8,9,10), "400만원 이상", "소득없음")))))
 
+rawdata1$DQ8_2 <- ifelse(rawdata1$DQ8_2 == 1, "100 만원 이하", # 개인소득별
+                         ifelse(rawdata1$DQ8_2 %in% c(2,3), "100~200만원",
+                                ifelse(rawdata1$DQ8_2 %in% c(4,5), "200~300만원", 
+                                       ifelse(rawdata1$DQ8_2 %in% c(6), "300~400만원",
+                                              ifelse(rawdata1$DQ8_2 %in% c(7,8,9,10), "400만원 이상", "소득없음")))))
+
+rawdata1$DQ4 <- ifelse(rawdata1$DQ4 == 0, "무학", # 학력별
+                         ifelse(rawdata1$DQ4 %in% c(1,2,3,4,5,6), "초등학교 졸업",
+                                ifelse(rawdata1$DQ4 %in% c(7,8,9), "중학교 졸업", 
+                                       ifelse(rawdata1$DQ4 %in% c(10,11,12), "고등학교 졸업",
+                                              ifelse(rawdata1$DQ4 %in% c(13,14,15,16), "대학교 졸업", "대학원 졸업")))))
+
+
 rawdata1$A1 <- ifelse(rawdata1$A1 == 1, "네", "아니오") # 송전탑 가시거리 거주별
 
 options(digits = 4) # 소수점 확대
@@ -126,6 +139,18 @@ class1_income <- class1 %>%
   select(DQ8_1)
 t1_3 <- table(class1_income)
 prop.table(t1_3)
+
+# class4. 개인소득 구분
+class1_income1 <- class1 %>%
+  select(DQ8_2)
+t1_31 <- table(class1_income1)
+prop.table(t1_31)
+
+# class4. 학력 구분
+class1_edu <- class1 %>%
+  select(DQ4)
+t1_7 <- table(class1_edu)
+prop.table(t1_7)
 
 # class4. 송전탑 가시거리 거주 구분
 class1_distance <- class1 %>%
@@ -236,6 +261,18 @@ class2_income <- class2 %>%
 t2_3 <- table(class2_income)
 prop.table(t2_3)
 
+# class3. 개인소득 구분
+class2_income1 <- class2 %>%
+  select(DQ8_2)
+t2_31 <- table(class2_income1)
+prop.table(t2_31)
+
+# class3. 학력 구분
+class2_edu <- class2 %>%
+  select(DQ4)
+t2_7 <- table(class2_edu)
+prop.table(t2_7)
+
 # class3. 송전탑 가시거리 거주 구분
 class2_distance <- class2 %>%
   select(A1)
@@ -341,6 +378,18 @@ class3_income <- class3 %>%
   select(DQ8_1)
 t3_3 <- table(class3_income)
 prop.table(t3_3)
+
+# class2. 개인소득 구분
+class3_income1 <- class3 %>%
+  select(DQ8_2)
+t3_31 <- table(class3_income1)
+prop.table(t3_31)
+
+# class2. 학력 구분
+class3_edu <- class3 %>%
+  select(DQ4)
+t3_7 <- table(class3_edu)
+prop.table(t3_7)
 
 # class2. 송전탑 가시거리 거주 구분
 class3_distance <- class3 %>%
@@ -448,6 +497,18 @@ class4_income <- class4 %>%
 t4_3 <- table(class4_income)
 prop.table(t4_3)
 
+# class1. 개인소득 구분
+class4_income1 <- class4 %>%
+  select(DQ8_2)
+t4_31 <- table(class4_income1)
+prop.table(t4_31)
+
+# class1. 학력 구분
+class4_edu <- class4 %>%
+  select(DQ4)
+t4_7 <- table(class4_edu)
+prop.table(t4_7)
+
 # class1. 송전탑 가시거리 거주 구분
 class4_distance <- class4 %>%
   select(A1)
@@ -551,6 +612,19 @@ class_income <- rawdata1 %>%
   select(DQ8_1)
 t_3 <- table(class_income)
 prop.table(t_3)
+
+# class. 개인소득 구분
+class_income31 <- rawdata1 %>%
+  select(DQ8_2)
+t_31 <- table(class_income31)
+prop.table(t_31)
+
+# class. 학력 구분
+class_edu <- rawdata1 %>%
+  select(DQ4)
+t_23 <- table(class_edu)
+prop.table(t_23)
+
 
 # class. 송전탑 가시거리 거주 구분
 class_distance <- rawdata1 %>%
