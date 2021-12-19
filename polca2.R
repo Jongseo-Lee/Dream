@@ -84,7 +84,6 @@ lca
 
 # rawdata 계층구분
 rawdata1 <- cbind(rawdata, lca$predclass)
-View(rawdata1)
 
 
 # 데이터 전처리
@@ -710,6 +709,87 @@ class_Q12 <- rawdata1 %>%
 mean(as.matrix(class_Q12))
 sd(as.matrix(class_Q12))
 
+# class. 문16
+class_Q161 <- rawdata1 %>%
+  select(A16_1)
+mean(as.matrix(class_Q161))
+sd(as.matrix(class_Q161))
+
+class_Q162 <- rawdata1 %>%
+  select(A16_2)
+mean(as.matrix(class_Q162))
+sd(as.matrix(class_Q162))
+
+class_Q163 <- rawdata1 %>%
+  select(A16_3)
+mean(as.matrix(class_Q163))
+sd(as.matrix(class_Q163))
+
+class_Q164 <- rawdata1 %>%
+  select(A16_4)
+mean(as.matrix(class_Q164))
+sd(as.matrix(class_Q164))
+
+class_Q165 <- rawdata1 %>%
+  select(A16_5)
+mean(as.matrix(class_Q165))
+sd(as.matrix(class_Q165))
+
+class_Q166 <- rawdata1 %>%
+  select(A16_6)
+mean(as.matrix(class_Q166))
+sd(as.matrix(class_Q166))
+
+class_Q171 <- rawdata1 %>%
+  select(A17_1)
+mean(as.matrix(class_Q171))
+sd(as.matrix(class_Q171))
+
+class_Q172 <- rawdata1 %>%
+  select(A17_2)
+mean(as.matrix(class_Q172))
+sd(as.matrix(class_Q172))
+
+class_Q173 <- rawdata1 %>%
+  select(A17_3)
+mean(as.matrix(class_Q173))
+sd(as.matrix(class_Q173))
+
+class_Q174 <- rawdata1 %>%
+  select(A17_4)
+mean(as.matrix(class_Q174))
+sd(as.matrix(class_Q174))
+
+class_Q175 <- rawdata1 %>%
+  select(A17_5)
+mean(as.matrix(class_Q175))
+sd(as.matrix(class_Q175))
+
+class_Q176 <- rawdata1 %>%
+  select(A17_6)
+mean(as.matrix(class_Q176))
+sd(as.matrix(class_Q176))
+
+class_Q177 <- rawdata1 %>%
+  select(A17_7)
+mean(as.matrix(class_Q177))
+sd(as.matrix(class_Q177))
+
+class_Q178 <- rawdata1 %>%
+  select(A17_8)
+mean(as.matrix(class_Q178))
+sd(as.matrix(class_Q178))
+
+class_Q179 <- rawdata1 %>%
+  select(A17_9)
+mean(as.matrix(class_Q179))
+sd(as.matrix(class_Q179))
+
+class_Q1710 <- rawdata1 %>%
+  select(A17_10)
+mean(as.matrix(class_Q1710))
+sd(as.matrix(class_Q1710))
+
 # class. 연령대 구분
 class_age <- rawdata1 %>%
   select(SQ2_2)
@@ -734,7 +814,6 @@ table = table %>%
 table
 table %>% 
   spread(key=class, value='Pr(2)')
-windows()
 
 table %>% ggplot()+
   geom_bar(aes(x=item, y=`Pr(2)`), stat='identity')+
@@ -765,4 +844,33 @@ visual %>% ggplot()+
   theme_bw()+theme(legend.position = "top")+
   facet_wrap(~class_name)
 lca$P
-  
+
+view(rawdata1)
+
+
+A13_class1 <- rawdata1 %>% 
+  filter(lca$predclass==4) %>% 
+  select(A13)
+
+A13_class2 <- rawdata1 %>% 
+  filter(lca$predclass==3) %>% 
+  select(A13)
+
+A13_class3 <- rawdata1 %>% 
+  filter(lca$predclass==2) %>% 
+  select(A13)
+
+A13_class4 <- rawdata1 %>% 
+  filter(lca$predclass==1) %>% 
+  select(A13)
+
+A13_class1$class <- 4
+A13_class2$class <- 3
+A13_class3$class <- 2
+A13_class4$class <- 1
+
+A13_class <- rbind(A13_class1,A13_class2,A13_class3,A13_class4)
+
+A13_class %>% 
+aov(class ~ A13, data=.) %>% 
+  summary()
