@@ -796,8 +796,8 @@ class_age <- rawdata1 %>%
 t_2 <- table(class_age)
 prop.table(t_2)
 
-item_label = c('A.17-01', 'A.17-02', 'A.17-03', 'A.17-04', 'A.17-05', 'A.17-06',
-               'A.17-07', 'A.17-08', 'A.17-09', 'A.17-10')
+item_label = c('01번 문항', '02번 문항', '03번 문항', '04번 문항', '05번 문항', '06번 문항',
+               '07번 문항', '08번 문항', '09번 문항', '10번 문항')
 
 item_resp_prob = lca$probs
 item_resp_prob[[1]] %>% as_tibble()
@@ -821,20 +821,22 @@ table %>% ggplot()+
   coord_flip()+
   theme_bw()+theme(legend.position = "top")+
   facet_wrap(~class)
-  
-class_name = c("4번집단(19%)","3번집단(28%)","2번집단(13%)","1번집단(40%)")
+
+windows()
+
+class_name = c("4번 계층(19%)","3번 계층(28%)","2번 계층(13%)","1번 계층(40%)")
 visual = table %>% 
   mutate(class_name = rep(class_name,10),
-    item_cluster = fct_recode(item, "문제인식"="A.17-01",
-                              "문제인식"="A.17-02",
-                              "문제인식"="A.17-03",
-                              "주민참여"="A.17-04",
-                              "주민참여"="A.17-05",
-                              "주민참여"="A.17-06",
-                              "건강위험"="A.17-07",
-                              "건강위험"="A.17-08",
-                              "경제적위험"="A.17-09",
-                              "경제적위험"="A.17-10"),
+    item_cluster = fct_recode(item, "문제인식"="01번 문항",
+                              "문제인식"="02번 문항",
+                              "문제인식"="03번 문항",
+                              "주민참여"="04번 문항",
+                              "주민참여"="05번 문항",
+                              "주민참여"="06번 문항",
+                              "건강위험"="07번 문항",
+                              "건강위험"="08번 문항",
+                              "경제적위험"="09번 문항",
+                              "경제적위험"="10번 문항"),
     item = fct_reorder(item, as.numeric(factor(item_cluster))))
 
 visual %>% ggplot()+
