@@ -417,3 +417,90 @@ DQ4_class <- rbind(DQ4_class1,DQ4_class2,DQ4_class3,DQ4_class4)
 DQ4_class %>% 
   aov(class ~ DQ4, data=.) %>% 
   summary()
+
+# A14. ANOVA
+
+A14_class1 <- rawdata1 %>% 
+  filter(lca$predclass==4) %>% 
+  select(A14)
+
+A14_class2 <- rawdata1 %>% 
+  filter(lca$predclass==3) %>% 
+  select(A14)
+
+A14_class3 <- rawdata1 %>% 
+  filter(lca$predclass==2) %>% 
+  select(A14)
+
+A14_class4 <- rawdata1 %>% 
+  filter(lca$predclass==1) %>% 
+  select(A14)
+
+A14_class1$class <- 4
+A14_class2$class <- 3
+A14_class3$class <- 2
+A14_class4$class <- 1
+
+A14_class <- rbind(A14_class1,A14_class2,A14_class3,A14_class4)
+
+A14_class %>% 
+  aov(class ~ A14, data=.) %>% 
+  summary()
+
+# A15. ANOVA
+
+A15_class1 <- rawdata1 %>% 
+  filter(lca$predclass==4) %>% 
+  select(A15)
+
+A15_class2 <- rawdata1 %>% 
+  filter(lca$predclass==3) %>% 
+  select(A15)
+
+A15_class3 <- rawdata1 %>% 
+  filter(lca$predclass==2) %>% 
+  select(A15)
+
+A15_class4 <- rawdata1 %>% 
+  filter(lca$predclass==1) %>% 
+  select(A15)
+
+A15_class1$class <- 4
+A15_class2$class <- 3
+A15_class3$class <- 2
+A15_class4$class <- 1
+
+A15_class <- rbind(A15_class1,A15_class2,A15_class3,A15_class4)
+
+A15_class %>% 
+  aov(class ~ A15, data=.) %>% 
+  summary()
+
+# A1. ANOVA
+
+A1_class1 <- rawdata1 %>% 
+  filter(lca$predclass==4) %>% 
+  select(A1)
+
+A1_class2 <- rawdata1 %>% 
+  filter(lca$predclass==3) %>% 
+  select(A1)
+
+A1_class3 <- rawdata1 %>% 
+  filter(lca$predclass==2) %>% 
+  select(A1)
+
+A1_class4 <- rawdata1 %>% 
+  filter(lca$predclass==1) %>% 
+  select(A1)
+
+A1_class1$class <- 4
+A1_class2$class <- 3
+A1_class3$class <- 2
+A1_class4$class <- 1
+
+A1_class <- rbind(A1_class1,A1_class2,A1_class3,A1_class4)
+
+A1_class %>% 
+  aov(class ~ A1, data=.) %>% 
+  summary()

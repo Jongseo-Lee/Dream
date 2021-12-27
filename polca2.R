@@ -213,6 +213,12 @@ class1_q6 <- class1 %>%
 t_q6 <- table(class1_q6)
 prop.table(t_q6)
 
+# class4. 문6 2순위
+class1_q62 <- class1 %>%
+  select(A6_2)
+t_q62 <- table(class1_q62)
+prop.table(t_q62)
+
 # class4. 문7 1순위
 class1_q7 <- class1 %>%
   select(A7_1)
@@ -237,6 +243,17 @@ class1_q12 <- class1 %>%
 mean(as.matrix(class1_q12))
 sd(as.matrix(class1_q12))
 
+# class4. 문14
+class1_q14 <- class1 %>%
+  select(A14)
+t_q14 <- table(class1_q14)
+prop.table(t_q14)
+
+# class4. 문14
+class1_q15 <- class1 %>%
+  select(A15)
+t_q15 <- table(class1_q15)
+prop.table(t_q15)
 
 # 3번 계층
 class2 <- rawdata1 %>% 
@@ -332,6 +349,12 @@ class2_q6 <- class2 %>%
 t2_q6 <- table(class2_q6)
 prop.table(t2_q6)
 
+# class3. 문6 2순위
+class2_q62 <- class2 %>%
+  select(A6_2)
+t2_q62 <- table(class2_q62)
+prop.table(t2_q62)
+
 # class3. 문7 1순위
 class2_q7 <- class2 %>%
   select(A7_1)
@@ -355,6 +378,18 @@ class2_q12 <- class2 %>%
   select(A12)
 mean(as.matrix(class2_q12))
 sd(as.matrix(class2_q12))
+
+# class3. 문14
+class2_q14 <- class2 %>%
+  select(A14)
+t_q14 <- table(class2_q14)
+prop.table(t_q14)
+
+# class3. 문14
+class2_q15 <- class2 %>%
+  select(A15)
+t_q15 <- table(class2_q15)
+prop.table(t_q15)
 
 # 2번 계층
 class3 <- rawdata1 %>% 
@@ -450,6 +485,12 @@ class3_q6 <- class3 %>%
 t3_q6 <- table(class3_q6)
 prop.table(t3_q6)
 
+# class2. 문6 2순위
+class3_q62 <- class3 %>%
+  select(A6_2)
+t3_q62 <- table(class3_q62)
+prop.table(t3_q62)
+
 # class2. 문7 1순위
 class3_q7 <- class3 %>%
   select(A7_1)
@@ -473,6 +514,18 @@ class3_q12 <- class3 %>%
   select(A12)
 mean(as.matrix(class3_q12))
 sd(as.matrix(class3_q12))
+
+# class2. 문14
+class3_q14 <- class3 %>%
+  select(A14)
+t_q14 <- table(class3_q14)
+prop.table(t_q14)
+
+# class2. 문14
+class3_q15 <- class3 %>%
+  select(A15)
+t_q15 <- table(class3_q15)
+prop.table(t_q15)
 
 # 1번 계층
 class4 <- rawdata1 %>% 
@@ -568,6 +621,12 @@ class4_q6 <- class4 %>%
 t4_q6 <- table(class4_q6)
 prop.table(t4_q6)
 
+# class1. 문6 2순위
+class4_q62 <- class4 %>%
+  select(A6_2)
+t4_q62 <- table(class4_q62)
+prop.table(t4_q62)
+
 # class1. 문7 1순위
 class4_q7 <- class4 %>%
   select(A7_1)
@@ -591,6 +650,18 @@ class4_q12 <- class4 %>%
   select(A12)
 mean(as.matrix(class4_q12))
 sd(as.matrix(class4_q12))
+
+# class1. 문14
+class4_q14 <- class4 %>%
+  select(A14)
+t_q14 <- table(class4_q14)
+prop.table(t_q14)
+
+# class1. 문14
+class4_q15 <- class4 %>%
+  select(A15)
+t_q15 <- table(class4_q15)
+prop.table(t_q15)
 
 # 전체 데이터
 
