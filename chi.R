@@ -81,10 +81,9 @@ c2 = c(21,40,8,9,1,4,1)
 c3 = c(57,98,7,14,3,11,5)
 c4 = c(34,98,2,10,2,3,1)
 
-data1 <- data.frame(c1, c2, c3, c4)
-data1 
-chisq.test(data1)
-fisher.test(data1, simulate.p.value = TRUE, B=2e6)
+CHI_A6_1 <- data.frame(c1, c2, c3, c4)
+chisq.test(CHI_A6_1)
+fisher.test(CHI_A6_1, simulate.p.value = TRUE, B=2e6)
 
 # class4. A6_2
 class1_A6_2 <- class1 %>%
@@ -111,37 +110,78 @@ c12 = c(29,18,8,15,3,4,7)
 c13 = c(51,43,18,34,7,22,20)
 c14 = c(57,35,6,21,5,7,19)
 
-data2 <- data.frame(c11, c12, c13, c14)
-data2 
-chisq.test(data2)
-fisher.test(data2, simulate.p.value = TRUE, B=2e6)
+CHI_A6_2 <- data.frame(c11, c12, c13, c14)
+chisq.test(CHI_A6_2)
+fisher.test(CHI_A6_2, simulate.p.value = TRUE, B=2e6)
 
-# class4. A7_1
-class1_A7_1 <- class1 %>%
+CHI_A7_1 <- rawdata1 %>%
+  group_by(lca$predclass) %>% 
   select(A7_1)
-table(class1_A7_1)
+CHI_A7_1 <- table(CHI_A7_1)
+CHI_A7_1
+chisq.test(CHI_A7_1)
+fisher.test(CHI_A7_1, simulate.p.value = TRUE, B=2e6)
 
-# class3. A7_1
-class2_A7_1 <- class2 %>%
-  select(A7_1)
-table(class2_A7_1)
+CHI_A14 <- rawdata1 %>%
+  group_by(lca$predclass) %>% 
+  select(A14)
+CHI_A14 <- table(CHI_A14)
+CHI_A14
+chisq.test(CHI_A14)
+fisher.test(CHI_A14, simulate.p.value = TRUE, B=2e6)
 
-# class2. A7_1
-class3_A7_1 <- class3 %>%
-  select(A7_1)
-table(class3_A7_1)
+CHI_A15 <- rawdata1 %>%
+  group_by(lca$predclass) %>% 
+  select(A15)
+CHI_A15 <- table(CHI_A15)
+CHI_A15
+chisq.test(CHI_A15)
+fisher.test(CHI_A15, simulate.p.value = TRUE, B=2e6)
 
-# class1. A7_1
-class4_A7_1 <- class4 %>%
-  select(A7_1)
-table(class4_A7_1)
+CHI_A13 <- rawdata1 %>%
+  group_by(lca$predclass) %>% 
+  select(A13)
+CHI_A13 <- table(CHI_A13)
+CHI_A13
+chisq.test(CHI_A13)
+fisher.test(CHI_A13, simulate.p.value = TRUE, B=2e6)
 
-c21 = c(29,92,69,41,29,33,2)
-c22 = c(1,28,14,15,10,16,0)
-c23 = c(9,56,32,39,25,31,3)
-c24 = c(7,29,14,59,12,24,5)
+CHI_A5 <- rawdata1 %>%
+  group_by(lca$predclass) %>% 
+  select(A5)
+CHI_A5 <- table(CHI_A5)
+CHI_A5
+chisq.test(CHI_A5)
+fisher.test(CHI_A5, simulate.p.value = TRUE, B=2e6)
 
-data3 <- data.frame(c21, c22, c23, c24)
-data3 
-chisq.test(data3)
-fisher.test(data3, simulate.p.value = TRUE, B=2e6)
+CHI_A1 <- rawdata1 %>%
+  group_by(lca$predclass) %>% 
+  select(A1)
+CHI_A1 <- table(CHI_A1)
+CHI_A1
+chisq.test(CHI_A1)
+fisher.test(CHI_A1, simulate.p.value = TRUE, B=2e6)
+
+CHI_SQ2_2 <- rawdata1 %>%
+  group_by(lca$predclass) %>% 
+  select(SQ2_2)
+CHI_SQ2_2 <- table(CHI_SQ2_2)
+CHI_SQ2_2
+chisq.test(CHI_SQ2_2)
+fisher.test(CHI_SQ2_2, simulate.p.value = TRUE, B=2e6)
+
+CHI_DQ8_1 <- rawdata1 %>%
+  group_by(lca$predclass) %>% 
+  select(DQ8_1)
+CHI_DQ8_1 <- table(CHI_DQ8_1)
+CHI_DQ8_1
+chisq.test(CHI_DQ8_1)
+fisher.test(CHI_DQ8_1, simulate.p.value = TRUE, B=2e6)
+
+CHI_DQ4 <- rawdata1 %>%
+  group_by(lca$predclass) %>% 
+  select(DQ4)
+CHI_DQ4 <- table(CHI_DQ4)
+CHI_DQ4
+chisq.test(CHI_DQ4)
+fisher.test(CHI_DQ4, simulate.p.value = TRUE, B=2e6)
